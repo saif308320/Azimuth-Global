@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azimuth Yacht Charters | Private Mediterranean & Caribbean Charters</title>
+  <meta name="description" content="Azimuth Yacht Charters — crewed luxury yacht charters from Monaco since 2010. Mediterranean, Caribbean, and Greek Islands.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%228%22%20fill%3D%22%23021018%22/%3E%20%3Cpath%20d%3D%22M12%2046%20L32%2014%20L52%2046%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23c9a96e%22%20stroke-width%3D%222%22/%3E%20%3Cpath%20d%3D%22M20%2046%20L32%2028%20L44%2046%22%20fill%3D%22none%22%20stroke%3D%22%23c9a96e%22%20stroke-width%3D%221.6%22/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%228%22%20fill%3D%22%23021018%22/%3E%20%3Cpath%20d%3D%22M12%2046%20L32%2014%20L52%2046%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23c9a96e%22%20stroke-width%3D%222%22/%3E%20%3Cpath%20d%3D%22M20%2046%20L32%2028%20L44%2046%22%20fill%3D%22none%22%20stroke%3D%22%23c9a96e%22%20stroke-width%3D%221.6%22/%3E%3C/svg%3E">
+  <style>
+:root {
+  --sea: #041a2e;
+  --deep: #021018;
+  --foam: #f4f7f9;
+  --gold: #c9a96e;
+  --gold-2: #e8d5a3;
+  --blue: #0a4a6e;
+  --line: rgba(201, 169, 110, 0.35);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+a:focus, button:focus, input:focus, select:focus, textarea:focus { outline: none; }
+a:focus-visible, button:focus-visible { outline: none; box-shadow: none; }
+body {
+  font-family: Manrope, system-ui, sans-serif;
+  background: var(--foam);
+  color: #123;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, .brand, .kicker { font-family: "Playfair Display", Georgia, serif; }
+.wrap { width: min(1200px, calc(100% - 40px)); margin: 0 auto; }
+.kicker {
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+h2 { font-size: clamp(2.1rem, 4.5vw, 3.6rem); font-weight: 500; line-height: 1.15; }
+.center { text-align: center; }
+.block-head { margin-bottom: 48px; }
+.block-head.split { display: flex; justify-content: space-between; gap: 32px; align-items: end; }
+.block-note { max-width: 380px; color: #4a6070; font-size: 0.92rem; }
+
+.pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 22px; border-radius: 999px;
+  letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.7rem;
+  border: 1px solid var(--gold); color: var(--gold); font-weight: 600;
+  transition: 0.3s;
+}
+.pill.solid { background: var(--gold); color: var(--deep); border-color: var(--gold); }
+.pill.solid:hover { background: var(--gold-2); box-shadow: 0 10px 30px rgba(201,169,110,0.35); }
+.pill.ghost { color: #fff; border-color: rgba(255,255,255,0.45); }
+.pill.ghost:hover { border-color: var(--gold); color: var(--gold); }
+.pill.full { width: 100%; border-radius: 8px; }
+
+.site-bar {
+  position: sticky; top: 0; z-index: 40;
+  display: flex; align-items: center; gap: 28px;
+  padding: 16px 28px;
+  color: #fff;
+  background: rgba(2,16,24,0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(201,169,110,0.22);
+  transition: 0.4s;
+}
+.site-bar.solid {
+  background: rgba(2,16,24,0.98);
+  color: #fff;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-size: 1.35rem; letter-spacing: 0.06em; color: #fff; }
+.brand-mark { width: 28px; height: 28px; color: var(--gold); }
+.site-bar nav { margin-left: auto; display: flex; gap: 22px; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: #f4f7f9; }
+.site-bar nav a { color: #f4f7f9; }
+.site-bar nav a:hover { color: var(--gold); }
+.site-bar .pill { color: var(--deep); background: var(--gold); border-color: var(--gold); }
+.site-bar .pill:focus, .site-bar .pill:focus-visible, .site-bar .pill:active { outline: none; box-shadow: none; border-color: var(--gold); }
+.burger { display: none; background: none; border: 0; width: 28px; cursor: pointer; }
+.burger span { display: block; height: 1px; background: var(--gold); margin: 7px 0; }
+
+.hero { min-height: 100vh; position: relative; display: grid; place-items: center; overflow: hidden; color: #fff; }
+.kenburns { position: absolute; inset: -8%; }
+.kenburns img {
+  width: 100%; height: 100%; object-fit: cover;
+  animation: ken 28s ease-in-out infinite alternate;
+}
+@keyframes ken {
+  from { transform: scale(1) translate(0,0); }
+  to { transform: scale(1.12) translate(-2%, 2%); }
+}
+.hero-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(2,16,24,0.35) 0%, rgba(2,16,24,0.55) 50%, rgba(2,16,24,0.85) 100%);
+}
+.glare {
+  position: absolute; width: 40%; height: 120%;
+  background: linear-gradient(115deg, transparent, rgba(255,255,255,0.08), transparent);
+  animation: glare 9s linear infinite;
+  pointer-events: none;
+}
+@keyframes glare { from { transform: translateX(-80%) rotate(12deg); } to { transform: translateX(220%) rotate(12deg); } }
+.bubbles i {
+  position: absolute; bottom: -20px; width: 10px; height: 10px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.35); animation: rise 12s linear infinite;
+}
+.bubbles i:nth-child(1) { left: 12%; animation-duration: 11s; }
+.bubbles i:nth-child(2) { left: 28%; width: 6px; height: 6px; animation-duration: 15s; }
+.bubbles i:nth-child(3) { left: 46%; animation-duration: 13s; }
+.bubbles i:nth-child(4) { left: 62%; width: 14px; height: 14px; animation-duration: 16s; }
+.bubbles i:nth-child(5) { left: 78%; animation-duration: 10s; }
+.bubbles i:nth-child(6) { left: 90%; width: 7px; height: 7px; animation-duration: 14s; }
+@keyframes rise { to { transform: translateY(-110vh); opacity: 0; } }
+
+.hero-center { position: relative; z-index: 2; text-align: center; width: min(820px, calc(100% - 40px)); }
+.hero-center h1 { font-size: clamp(2.8rem, 7vw, 5.6rem); font-weight: 500; line-height: 1.05; }
+.hero-center h1 span { display: block; opacity: 0; animation: headline 1s ease forwards; }
+.hero-center h1 span:nth-child(2) { animation-delay: 0.25s; font-style: italic; color: var(--gold-2); }
+@keyframes headline { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+.lede { margin: 22px auto 32px; max-width: 560px; color: rgba(255,255,255,0.78); font-weight: 300; }
+.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.float-scroll {
+  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold);
+  z-index: 2;
+}
+.float-scroll b {
+  width: 18px; height: 28px; border: 1px solid var(--gold); border-radius: 12px; position: relative;
+}
+.float-scroll b::after {
+  content: ""; position: absolute; left: 50%; top: 6px; width: 3px; height: 6px; margin-left: -1.5px;
+  background: var(--gold); border-radius: 2px; animation: bob 1.6s ease-in-out infinite;
+}
+@keyframes bob { 50% { transform: translateY(8px); opacity: 0.3; } }
+
+.wave { display: block; width: 100%; height: 64px; margin-top: -1px; }
+.wave path { fill: var(--foam); }
+.wave.invert { transform: rotate(180deg); }
+.wave.invert path { fill: #041a2e; }
+.wave-path { animation: waveShift 8s ease-in-out infinite; }
+@keyframes waveShift {
+  0%,100% { d: path("M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"); }
+  50% { d: path("M0,40 C240,0 480,80 720,40 C960,0 1200,80 1440,40 L1440,80 L0,80 Z"); }
+}
+
+.fleet { padding: 80px 0 40px; background: var(--foam); }
+.yacht-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.yacht {
+  background: #fff; overflow: hidden;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+}
+.yacht:hover { box-shadow: 24px 28px 50px rgba(4,26,46,0.18); }
+.yacht-media { height: 260px; position: relative; overflow: hidden; background: #041a2e; }
+.yacht-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: 0.5s; }
+.yacht-media img:first-child,
+.yacht-media img.show { opacity: 1; }
+.yacht:hover .yacht-media img:first-child { opacity: 0; }
+.yacht:hover .yacht-media img:nth-child(2) { opacity: 1; }
+.yacht-meta { padding: 18px 20px; }
+.yacht-meta h3 { font-size: 1.5rem; }
+.yacht-meta ul { display: flex; gap: 12px; list-style: none; font-size: 0.78rem; color: #4a6070; margin-top: 6px; letter-spacing: 0.04em; }
+
+.spotlight { padding: 90px 0; background: var(--sea); color: #fff; }
+.spot-layout { display: grid; grid-template-columns: 1.4fr 0.9fr; gap: 36px; margin-top: 28px; align-items: start; }
+.spot-stage { position: relative; min-height: 420px; }
+.spot-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: 0.7s; }
+.spot-img.active { opacity: 1; position: relative; height: 480px; }
+.spot-dots { position: absolute; bottom: 16px; left: 16px; display: flex; gap: 8px; }
+.spot-dots button { width: 8px; height: 8px; border-radius: 50%; border: 0; background: rgba(255,255,255,0.35); cursor: pointer; }
+.spot-dots button.on { background: var(--gold); }
+.spot-sheet {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+  padding: 28px;
+}
+.spot-sheet table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+.spot-sheet th { text-align: left; color: var(--gold); font-weight: 500; padding: 10px 0; width: 38%; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.spot-sheet td { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+.destinations { padding: 90px 0; background: var(--foam); }
+.dest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.dest { position: relative; height: 420px; overflow: hidden; }
+.dest img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+.dest:hover img { transform: scale(1.08); }
+.dest-overlay {
+  position: absolute; inset: auto 0 0 0; padding: 28px 22px;
+  background: linear-gradient(transparent, rgba(2,16,24,0.88));
+  color: #fff;
+}
+.dest-overlay p { max-height: 0; opacity: 0; overflow: hidden; transition: 0.4s; }
+.dest:hover .dest-overlay p { max-height: 120px; opacity: 1; }
+.dest h3 { font-size: 1.8rem; margin-bottom: 8px; }
+
+.experience { padding: 90px 0; background: #eef4f7; }
+.icon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.icon-card { background: #fff; padding: 28px; border: 1px solid rgba(4,26,46,0.08); }
+.icon-card .ico { color: var(--gold); letter-spacing: 0.2em; font-size: 0.75rem; margin-bottom: 10px; }
+.icon-card h3 { font-size: 1.25rem; margin-bottom: 8px; }
+.icon-card p { color: #4a6070; font-size: 0.9rem; }
+
+.how { padding: 90px 0; background: var(--foam); }
+.h-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
+.h-line { position: absolute; top: 22px; left: 8%; right: 8%; height: 1px; background: rgba(4,26,46,0.12); }
+.h-line i { display: block; height: 100%; width: 0; background: var(--gold); transition: width 0.2s linear; }
+.h-steps article { position: relative; padding-top: 48px; opacity: 0.4; transition: 0.4s; }
+.h-steps article.on { opacity: 1; }
+.h-steps span {
+  position: absolute; top: 0; left: 0;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: #fff; border: 1px solid var(--gold); color: var(--gold);
+  display: grid; place-items: center; font-size: 0.75rem;
+}
+.h-steps article.on span { background: var(--gold); color: var(--deep); }
+.h-steps h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.h-steps p { color: #4a6070; font-size: 0.9rem; }
+
+.gallery { padding: 40px 0 80px; background: var(--foam); }
+.masonry {
+  column-count: 3; column-gap: 12px;
+  width: min(1280px, calc(100% - 24px)); margin: 28px auto 0;
+}
+.g { width: 100%; border: 0; background: none; margin: 0 0 12px; cursor: zoom-in; break-inside: avoid; }
+.g img { width: 100%; display: block; }
+.lightbox {
+  position: fixed; inset: 0; background: rgba(2,16,24,0.92);
+  display: grid; place-items: center; z-index: 80; padding: 40px;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; }
+.lb-close { position: absolute; top: 18px; right: 22px; background: none; border: 0; color: #fff; font-size: 2rem; cursor: pointer; }
+
+.reviews { position: relative; padding: 100px 0; background: var(--sea); color: #fff; overflow: hidden; }
+.wave-bg {
+  position: absolute; inset: 0; opacity: 0.18;
+  background:
+    radial-gradient(ellipse at 20% 80%, #0a4a6e, transparent 50%),
+    repeating-linear-gradient(90deg, transparent 0 40px, rgba(201,169,110,0.08) 40px 41px);
+}
+.slim { max-width: 760px; text-align: center; position: relative; }
+.review-stage { min-height: 220px; margin-top: 20px; }
+.review-stage blockquote { display: none; }
+.review-stage blockquote.on { display: block; animation: fade 0.6s ease; }
+.stars { color: var(--gold); letter-spacing: 4px; margin-bottom: 16px; }
+.review-stage p { font-family: "Playfair Display", serif; font-size: 1.55rem; font-style: italic; line-height: 1.45; }
+.review-stage cite { display: block; margin-top: 18px; font-style: normal; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+.rev-nav { margin-top: 24px; display: flex; justify-content: center; gap: 10px; }
+.rev-nav button { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: none; color: var(--gold); cursor: pointer; font-size: 1.2rem; }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+.about { padding: 100px 0; background: var(--foam); }
+.about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.about-copy p { color: #3a5160; margin-bottom: 14px; }
+.about-photo img { height: 480px; width: 100%; object-fit: cover; }
+.cap { margin-top: 10px; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+
+.booking { padding: 100px 0; background: #e8eef2; }
+.book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.facts { list-style: none; margin: 24px 0; }
+.facts li { margin-bottom: 14px; }
+.facts span { display: block; color: var(--gold); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.map { height: 220px; overflow: hidden; }
+.map iframe { width: 100%; height: 100%; border: 0; filter: saturate(0.6); }
+.charter-form { background: #fff; padding: 28px; display: grid; gap: 12px; }
+.charter-form label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #5a6e7a; }
+.charter-form input, .charter-form select {
+  width: 100%; margin-top: 6px; padding: 11px 12px; border: 1px solid #d5dde3; font-family: inherit;
+}
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ok { color: #1a6b4a; font-size: 0.85rem; }
+
+.site-foot { background: var(--deep); color: rgba(255,255,255,0.7); padding: 64px 0 24px; }
+.foot { display: grid; grid-template-columns: 1.3fr 0.8fr 1fr 1.2fr; gap: 28px; }
+.site-foot h4 { color: #fff; margin-bottom: 10px; font-size: 1rem; }
+.site-foot a { display: block; margin: 4px 0; }
+.site-foot a:hover { color: var(--gold); }
+.socials { display: flex; gap: 14px; margin-top: 12px; }
+.socials a { display: inline; }
+.news { display: flex; gap: 8px; margin-top: 10px; }
+.news input { flex: 1; background: transparent; border: 1px solid var(--line); color: #fff; padding: 10px 12px; }
+.legal { width: min(1200px, calc(100% - 40px)); margin: 36px auto 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.72rem; }
+
+.fade-up { opacity: 0; transform: translateY(28px); transition: 0.7s ease; }
+.fade-up.in { opacity: 1; transform: none; }
+
+@media (max-width: 980px) {
+  .site-bar nav, .site-bar .pill { display: none; }
+  .site-bar nav.open {
+    display: flex; flex-direction: column; position: absolute; top: 62px; left: 0; right: 0;
+    background: rgba(2,16,24,0.96); padding: 20px; gap: 14px;
+  }
+  .burger { display: block; margin-left: auto; }
+  .yacht-grid, .dest-grid, .icon-grid, .spot-layout, .about-split, .book-grid, .foot { grid-template-columns: 1fr 1fr; }
+  .h-steps { grid-template-columns: 1fr 1fr; }
+  .masonry { column-count: 2; }
+}
+@media (max-width: 640px) {
+  .yacht-grid, .dest-grid, .icon-grid, .spot-layout, .about-split, .book-grid, .foot, .h-steps, .two, .block-head.split { grid-template-columns: 1fr; }
+  .masonry { column-count: 1; }
+  .hero-center h1 { font-size: 2.4rem; }
+}
+
+  </style>
+</head>
+<body>
+  <header class="site-bar" id="header">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 34 L24 10 L40 34 H8Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M14 34 L24 22 L34 34" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+      Azimuth
+    </a>
+    <nav id="nav">
+      <a href="#fleet">Fleet</a>
+      <a href="#spotlight">Spotlight</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#experience">Onboard</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#booking">Charter</a>
+    </nav>
+    <a class="pill" href="#booking">Request a Quote</a>
+    <button class="burger" id="navToggle" aria-label="Menu"><span></span><span></span></button>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="kenburns" id="kenburns">
+      <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=2000&q=80" alt="Luxury yacht on open water">
+    </div>
+    <div class="hero-veil"></div>
+    <div class="glare" aria-hidden="true"></div>
+    <div class="bubbles" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="hero-center">
+      <p class="kicker">Monaco · Est. 2010</p>
+      <h1>
+        <span>The sea,</span>
+        <span>without compromise.</span>
+      </h1>
+      <p class="lede">Crewed motor yachts and sailing vessels for private itineraries across the Côte d’Azur, the Aegean, and the Caribbean — provisioned, captained, and entirely yours.</p>
+      <div class="cta-row">
+        <a class="pill solid" href="#fleet">Explore Our Fleet</a>
+        <a class="pill ghost" href="#booking">Request a Quote</a>
+      </div>
+    </div>
+    <a class="float-scroll" href="#fleet">
+      <span>Discover</span>
+      <b></b>
+    </a>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+    <path class="wave-path" d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"></path>
+  </svg>
+
+  <section class="fleet" id="fleet">
+    <div class="wrap">
+      <header class="block-head split">
+        <div>
+          <p class="kicker">The Collection</p>
+          <h2>Our Fleet</h2>
+        </div>
+        <p class="block-note">Six vessels. One standard of quiet luxury. Rates shown per day, high season, crewed and inclusive of fuel at 10 knots.</p>
+      </header>
+      <div class="yacht-grid">
+        <article class="yacht tilt" data-tilt data-gallery="0">
+          <div class="yacht-media">
+            <img class="show" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1100&q=80" alt="Seraphina exterior">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1100&q=80" alt="Seraphina deck">
+          </div>
+          <div class="yacht-meta">
+            <h3>Seraphina</h3>
+            <ul>
+              <li>52 m</li>
+              <li>12 guests</li>
+              <li>From €95,000 / day</li>
+            </ul>
+          </div>
+        </article>
+        <article class="yacht tilt" data-tilt data-gallery="1">
+          <div class="yacht-media">
+            <img class="show" src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1100&q=80" alt="Calypso exterior">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1100&q=80" alt="Calypso at sea">
+          </div>
+          <div class="yacht-meta">
+            <h3>Calypso</h3>
+            <ul>
+              <li>38 m</li>
+              <li>10 guests</li>
+              <li>From €48,000 / day</li>
+            </ul>
+          </div>
+        </article>
+        <article class="yacht tilt" data-tilt data-gallery="2">
+          <div class="yacht-media">
+            <img class="show" src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=1100&q=80" alt="North Star sailing yacht">
+            <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=1100&q=80" alt="Sails at dusk">
+          </div>
+          <div class="yacht-meta">
+            <h3>North Star</h3>
+            <ul>
+              <li>44 m sailing</li>
+              <li>8 guests</li>
+              <li>From €62,000 / day</li>
+            </ul>
+          </div>
+        </article>
+        <article class="yacht tilt" data-tilt data-gallery="3">
+          <div class="yacht-media">
+            <img class="show" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=80" alt="Aurora yacht">
+            <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1100&q=80" alt="Beach tender">
+          </div>
+          <div class="yacht-meta">
+            <h3>Aurora</h3>
+            <ul>
+              <li>28 m</li>
+              <li>8 guests</li>
+              <li>From €28,500 / day</li>
+            </ul>
+          </div>
+        </article>
+        <article class="yacht tilt" data-tilt data-gallery="4">
+          <div class="yacht-media">
+            <img class="show" src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1100&q=80" alt="Vesper yacht">
+            <img src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?auto=format&fit=crop&w=1100&q=80" alt="Underwater blue">
+          </div>
+          <div class="yacht-meta">
+            <h3>Vesper</h3>
+            <ul>
+              <li>61 m</li>
+              <li>14 guests</li>
+              <li>From €145,000 / day</li>
+            </ul>
+          </div>
+        </article>
+        <article class="yacht tilt" data-tilt data-gallery="5">
+          <div class="yacht-media">
+            <img class="show" src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&fit=crop&w=1100&q=80" alt="Isla catamaran">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1100&q=80" alt="Turquoise water">
+          </div>
+          <div class="yacht-meta">
+            <h3>Isla</h3>
+            <ul>
+              <li>24 m catamaran</li>
+              <li>10 guests</li>
+              <li>From €18,000 / day</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <svg class="wave invert" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+    <path class="wave-path" d="M0,40 C240,0 480,80 720,40 C960,0 1200,80 1440,40 L1440,80 L0,80 Z"></path>
+  </svg>
+
+  <section class="spotlight" id="spotlight">
+    <div class="wrap">
+      <p class="kicker">Flagship</p>
+      <h2>Vesper — 61 metres of quiet power</h2>
+      <div class="spot-layout">
+        <div class="spot-stage">
+          <img class="spot-img active" src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1600&q=80" alt="Vesper profile">
+          <img class="spot-img" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1600&q=80" alt="Vesper at dusk">
+          <img class="spot-img" src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=1600&q=80" alt="Vesper deck">
+          <div class="spot-dots" id="spotDots"></div>
+        </div>
+        <aside class="spot-sheet fade-up">
+          <table>
+            <tr><th>Length</th><td>61.4 m / 201 ft</td></tr>
+            <tr><th>Cabins</th><td>7 staterooms · owner’s deck</td></tr>
+            <tr><th>Guests</th><td>14</td></tr>
+            <tr><th>Crew</th><td>16, including private chef</td></tr>
+            <tr><th>Top speed</th><td>18 knots</td></tr>
+            <tr><th>Built</th><td>2022 · Benetti</td></tr>
+            <tr><th>Amenities</th><td>Beach club, spa, cinema, two tenders, toys</td></tr>
+          </table>
+          <a class="pill solid" href="#booking">Check Availability</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="destinations" id="destinations">
+    <div class="wrap">
+      <header class="block-head">
+        <p class="kicker">Routes</p>
+        <h2>Where the season takes you</h2>
+      </header>
+      <div class="dest-grid">
+        <article class="dest fade-up">
+          <img src="https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?auto=format&fit=crop&w=1200&q=80" alt="Mediterranean coastline">
+          <div class="dest-overlay">
+            <h3>Mediterranean</h3>
+            <p>Monaco · Portofino · Capri · Saint-Tropez. Night berths in Port Hercules, lunch in hidden coves east of Antibes.</p>
+          </div>
+        </article>
+        <article class="dest fade-up">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" alt="Caribbean waters">
+          <div class="dest-overlay">
+            <h3>Caribbean</h3>
+            <p>British Virgin Islands · St. Barts · Antigua. Trade-wind sailing, empty beaches, and Christmas-week demand that books a year out.</p>
+          </div>
+        </article>
+        <article class="dest fade-up">
+          <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=1200&q=80" alt="Greek islands">
+          <div class="dest-overlay">
+            <h3>Greek Islands</h3>
+            <p>Mykonos · Santorini · a quieter Ionian loop. Captain-led itineraries that skip the day-tripper harbours.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="wrap">
+      <header class="block-head">
+        <p class="kicker">Onboard</p>
+        <h2>The charter, fully staffed</h2>
+      </header>
+      <div class="icon-grid">
+        <article class="icon-card fade-up"><div class="ico">01</div><h3>Private Chef</h3><p>Menus written around your table — Provençal, Nikkei, or a child’s pasta at 22:00 without a raised eyebrow.</p></article>
+        <article class="icon-card fade-up"><div class="ico">02</div><h3>Water Sports</h3><p>Seabobs, e-foils, dive compressor, and a chase tender. Toys live on the swim platform, not in a brochure.</p></article>
+        <article class="icon-card fade-up"><div class="ico">03</div><h3>Professional Crew</h3><p>MCA / STCW certified. Many with us since 2010. Uniformed, multilingual, and trained for discretion.</p></article>
+        <article class="icon-card fade-up"><div class="ico">04</div><h3>Custom Itineraries</h3><p>We draft the week around your energy — museum mornings in Palma, or five days of no-plan swimming.</p></article>
+        <article class="icon-card fade-up"><div class="ico">05</div><h3>Catering</h3><p>Provisioned in port before you step aboard. Dietary notes collected in the pre-charter call, not on day two.</p></article>
+        <article class="icon-card fade-up"><div class="ico">06</div><h3>Concierge</h3><p>Tables, helicopters, villa nights ashore, and last-minute florist runs in Portofino. One WhatsApp thread.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <header class="block-head">
+        <p class="kicker">Charter Path</p>
+        <h2>How it works</h2>
+      </header>
+      <div class="h-steps" id="hSteps">
+        <div class="h-line"><i id="hDraw"></i></div>
+        <article data-hs><span>01</span><h3>Choose Yacht</h3><p>Fleet shortlist against dates, guest count, and the water you want under the hull.</p></article>
+        <article data-hs><span>02</span><h3>Customize Itinerary</h3><p>Ports, provisioning, and a captain’s weather window — drafted with you, not for you.</p></article>
+        <article data-hs><span>03</span><h3>Confirm Booking</h3><p>MYBA contract, APA, and insurance. Your dates locked. Crew briefed.</p></article>
+        <article data-hs><span>04</span><h3>Set Sail</h3><p>Champagne on the passerelle. The week begins when the lines come off.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <p class="kicker center">On the water</p>
+    <h2 class="center">Gallery</h2>
+    <div class="masonry">
+      <button class="g" data-full="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1800&q=80"><img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=900&q=80" alt="Yacht at dusk"></button>
+      <button class="g tall" data-full="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1800&q=80"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80" alt="Deck lounge"></button>
+      <button class="g" data-full="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Turquoise shoreline"></button>
+      <button class="g" data-full="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1800&q=80"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=900&q=80" alt="Sunset cruise"></button>
+      <button class="g tall" data-full="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=1800&q=80"><img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=900&q=80" alt="Sailing yacht"></button>
+      <button class="g" data-full="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1800&q=80"><img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=900&q=80" alt="Motor yacht bow"></button>
+    </div>
+  </section>
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+    <img id="lbImg" alt="Gallery enlarge">
+  </div>
+
+  <section class="reviews" id="reviews">
+    <div class="wave-bg" aria-hidden="true"></div>
+    <div class="wrap slim">
+      <p class="kicker">Guests</p>
+      <div class="review-stage" id="reviewsStage">
+        <blockquote class="on">
+          <div class="stars">★★★★★</div>
+          <p>“Vesper in the Ionian last August — the crew made a family of eight feel like the only people on the water. We have already rebooked for St. Barts.”</p>
+          <cite>Amelia H. · Charter: Greek Islands</cite>
+        </blockquote>
+        <blockquote>
+          <div class="stars">★★★★★</div>
+          <p>“Azimuth handled a last-minute Mediterranean week after another broker collapsed. Honest about weather, precise about APA. Rare.”</p>
+          <cite>Thomas R. · Charter: Côte d’Azur</cite>
+        </blockquote>
+        <blockquote>
+          <div class="stars">★★★★★</div>
+          <p>“North Star under sail from Antigua to the BVIs. The chef remembered a nut allergy from a note we sent six months prior. That is the standard.”</p>
+          <cite>Priya S. · Charter: Caribbean</cite>
+        </blockquote>
+      </div>
+      <div class="rev-nav">
+        <button type="button" data-r="-1">‹</button>
+        <button type="button" data-r="1">›</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-split">
+      <div class="about-copy fade-up">
+        <p class="kicker">The House</p>
+        <h2>Azimuth, since 2010</h2>
+        <p>Founded on the quays of Port Hercules by a captain and a charter broker who had grown tired of brochures that outran the boats. We keep a small fleet we know by hull number — and we decline weeks we cannot staff to our own standard.</p>
+        <p>Every captain holds an MCA Yachtmaster Ocean or equivalent. Engineers are STCW certified. Safety drills are not a checklist we file; they are run before every charter, with guests invited to watch.</p>
+        <p>Luxury, for us, is a quiet engine room, a table that is never late, and a crew that disappears until you need them.</p>
+      </div>
+      <div class="about-photo fade-up">
+        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1200&q=80" alt="Monaco harbour">
+        <p class="cap">Port Hercules, Monaco</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking" id="booking">
+    <div class="wrap book-grid">
+      <div>
+        <p class="kicker">Charter Desk</p>
+        <h2>Request a private week</h2>
+        <ul class="facts">
+          <li><span>Address</span><a href="https://maps.google.com/?q=Port+Hercules+Quai+Antoine+1er+Monaco" target="_blank" rel="noopener">Port Hercules, Quai Antoine 1er<br>98000 Monaco</a></li>
+          <li><span>Telephone</span><a href="tel:+37793254188">+377 93 25 41 88</a></li>
+          <li><span>Email</span><a href="mailto:charters@azimuthyachts.com">charters@azimuthyachts.com</a></li>
+        </ul>
+        <div class="map">
+          <iframe title="Monaco office" loading="lazy" src="https://maps.google.com/maps?q=Port%20Hercules%20Monaco&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
+      <form class="charter-form" id="charterForm">
+        <label>Name<input name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Phone<input type="tel" name="phone" required placeholder="+377 93 25 41 88"></label>
+        <label>Preferred destination
+          <select name="dest" required>
+            <option value="">Select</option>
+            <option>Mediterranean</option>
+            <option>Caribbean</option>
+            <option>Greek Islands</option>
+            <option>Open — advise us</option>
+          </select>
+        </label>
+        <div class="two">
+          <label>Start date<input type="date" name="start" required></label>
+          <label>End date<input type="date" name="end" required></label>
+        </div>
+        <div class="two">
+          <label>Guests<input type="number" name="guests" min="1" max="16" required></label>
+          <label>Budget / day
+            <select name="budget" required>
+              <option value="">Select</option>
+              <option>€15k – €30k</option>
+              <option>€30k – €60k</option>
+              <option>€60k – €100k</option>
+              <option>€100k+</option>
+            </select>
+          </label>
+        </div>
+        <button class="pill solid full" type="submit">Send Inquiry</button>
+        <p class="ok" id="formOk" hidden>Received. The charter desk will write within one business day.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <div class="wrap foot">
+      <div>
+        <div class="brand">Azimuth</div>
+        <p>Private yacht charters. Monaco, 2010.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <a href="#fleet">Fleet</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Charter</a>
+      </div>
+      <div>
+        <h4>Desk</h4>
+        <p>Port Hercules, Quai Antoine 1er<br>98000 Monaco</p>
+        <a href="tel:+37793254188">+377 93 25 41 88</a>
+        <a href="mailto:charters@azimuthyachts.com">charters@azimuthyachts.com</a>
+      </div>
+      <form id="newsForm">
+        <h4>Exclusive weeks</h4>
+        <p>Last-minute cancellations and shoulder-season rates.</p>
+        <div class="news">
+          <input type="email" required placeholder="Email">
+          <button class="pill solid" type="submit">Join</button>
+        </div>
+        <p class="ok" id="newsOk" hidden>You are on the list.</p>
+      </form>
+    </div>
+    <p class="legal">Charters are subject to MYBA terms, APA, and vessel availability. Azimuth Yacht Charters SAM is registered in Monaco. © 2026 Azimuth Yacht Charters.</p>
+  </footer>
+
+  <script>
+(function () {
+  const header = document.getElementById("header");
+  const nav = document.getElementById("nav");
+  const toggle = document.getElementById("navToggle");
+
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("solid", window.scrollY > 40);
+  }, { passive: true });
+
+  toggle.addEventListener("click", () => nav.classList.toggle("open"));
+  nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => nav.classList.remove("open")));
+
+  document.querySelectorAll("[data-tilt]").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `perspective(900px) rotateY(${x * 10}deg) rotateX(${-y * 8}deg) translateY(-6px)`;
+    });
+    card.addEventListener("mouseleave", () => { card.style.transform = ""; });
+  });
+
+  const spots = [...document.querySelectorAll(".spot-img")];
+  const dots = document.getElementById("spotDots");
+  let si = 0;
+  spots.forEach((_, i) => {
+    const b = document.createElement("button");
+    if (i === 0) b.classList.add("on");
+    b.addEventListener("click", () => showSpot(i));
+    dots.appendChild(b);
+  });
+  const showSpot = (i) => {
+    si = (i + spots.length) % spots.length;
+    spots.forEach((s, n) => s.classList.toggle("active", n === si));
+    [...dots.children].forEach((d, n) => d.classList.toggle("on", n === si));
+  };
+  setInterval(() => showSpot(si + 1), 4500);
+
+  const fadeObs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("in"); });
+  }, { threshold: 0.16 });
+  document.querySelectorAll(".fade-up").forEach((el) => fadeObs.observe(el));
+
+  const steps = [...document.querySelectorAll("[data-hs]")];
+  const draw = document.getElementById("hDraw");
+  const hWrap = document.getElementById("hSteps");
+  const drawLine = () => {
+    if (!hWrap || !draw) return;
+    const rect = hWrap.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (window.innerHeight * 0.7 - rect.top) / rect.height));
+    draw.style.width = p * 100 + "%";
+    steps.forEach((s, i) => s.classList.toggle("on", p > i / steps.length));
+  };
+  window.addEventListener("scroll", drawLine, { passive: true });
+  drawLine();
+
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  document.querySelectorAll(".g").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      lbImg.src = btn.dataset.full;
+      lb.hidden = false;
+    });
+  });
+  document.getElementById("lbClose").addEventListener("click", () => { lb.hidden = true; });
+  lb.addEventListener("click", (e) => { if (e.target === lb) lb.hidden = true; });
+
+  const revs = [...document.querySelectorAll("#reviewsStage blockquote")];
+  let ri = 0;
+  const showR = (i) => {
+    ri = (i + revs.length) % revs.length;
+    revs.forEach((r, n) => r.classList.toggle("on", n === ri));
+  };
+  document.querySelectorAll("[data-r]").forEach((b) => {
+    b.addEventListener("click", () => showR(ri + parseInt(b.dataset.r, 10)));
+  });
+  setInterval(() => showR(ri + 1), 6200);
+
+  document.getElementById("charterForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.getElementById("formOk").hidden = false;
+    e.target.reset();
+  });
+  document.getElementById("newsForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.getElementById("newsOk").hidden = false;
+    e.target.reset();
+  });
+})();
+
+  </script>
+</body>
+</html>
